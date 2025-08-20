@@ -1,0 +1,25 @@
+name: DP CI/CD
+
+on:
+  push:
+    paths:
+      - 'dp/**'
+      - 'shared/**'
+  pull_request:
+    paths:
+      - 'dp/**'
+      - 'shared/**'
+
+jobs:
+  build-test-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Echo Build
+        run: echo "Building dp package..."
+
+      - name: Echo Test
+        run: echo "Testing dp package..."
+
+      - name: Echo Deploy
+        run: echo "Deploying dp package..."

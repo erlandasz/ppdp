@@ -1,0 +1,25 @@
+name: PP CI/CD
+
+on:
+  push:
+    paths:
+      - 'pp/**'
+      - 'shared/**'
+  pull_request:
+    paths:
+      - 'pp/**'
+      - 'shared/**'
+
+jobs:
+  build-test-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Echo Build
+        run: echo "Building pp package..."
+
+      - name: Echo Test
+        run: echo "Testing pp package..."
+
+      - name: Echo Deploy
+        run: echo "Deploying pp package..."
